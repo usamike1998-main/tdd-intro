@@ -12,6 +12,15 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
+  if (isNan(num1) || isNaN(num2)) {
+    return undefined;
+  }
+
+  switch (true) {
+    case num1 === num2:
+      return (num1 + num2) * 2;
+  }
+  return num1 + num2;
   /* TODO */
 }
 
@@ -28,6 +37,12 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
+  if (isNan(num1) || isNaN(num2)) {
+    return undefined;
+  }
+
+  return num1 === 10 || num2 === 10 || num1 + num2 === 10;
+
   /* TODO */
 }
 
@@ -46,6 +61,11 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
+  if (isNaN(n) || isNaN(distance)) {
+    return undefined;
+  }
+  return 100 - distance <= n && distance + 100 >= n;
+
   /* TODO */
 }
 
@@ -63,6 +83,10 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
+  if (isNaN(n)) {
+    return undefined;
+  }
+  return n % 3 === 0 || n % 5 === 0;
   /* TODO */
 }
 
