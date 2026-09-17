@@ -12,7 +12,7 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  if (isNan(num1) || isNaN(num2)) {
+  if (isNaN(num1) || isNaN(num2)) {
     return undefined;
   }
 
@@ -37,7 +37,7 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  if (isNan(num1) || isNaN(num2)) {
+  if (isNaN(num1) || isNaN(num2)) {
     return undefined;
   }
 
