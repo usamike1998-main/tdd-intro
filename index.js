@@ -105,6 +105,10 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
+  if (isNaN(num1) || isNaN(num2)) {
+    return undefined;
+  }
+  return num1 % 10 === num2 % 10;
   /* TODO */
 }
 
@@ -123,6 +127,7 @@ export function shareLastDigit(num1, num2) {
  */
 export function isColdAndHot(temp1, temp2) {
   /* TODO */
+  return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
 }
 
 /**
@@ -139,8 +144,13 @@ export function isColdAndHot(temp1, temp2) {
  */
 export function makeABBA(A, B) {
   /* TODO */
+  if (typeof A !== "string" || typeof B !== "string") {
+    return undefined;
+  }
+  {
+    return `${A}${B}${B}${A}`;
+  }
 }
-
 /**
  * Returns a string of the form short+long+short, with the shorter string
  * on the outside and the longer string on the inside.
@@ -160,6 +170,14 @@ export function makeABBA(A, B) {
  */
 export function makeSLS(str1, str2) {
   /* TODO */
+  if (typeof str1 !== "string" || typeof str2 !== "string") {
+    return undefined;
+  }
+  if (str2.length < str1.length) {
+    return `${str2}${str1}${str2}`;
+  } else {
+    return `${str1}${str2}${str1}`;
+  }
 }
 
 /**
@@ -181,6 +199,16 @@ export function makeSLS(str1, str2) {
  */
 export function canEnterClub(you, date) {
   /* TODO */
+  if (isNaN(you) || isNaN(date)) {
+    return undefined;
+  }
+  switch (true) {
+    case you <= 2 || date <= 2:
+      return 0;
+    case you >= 8 || date >= 8:
+      return 2;
+  }
+  return 1;
 }
 
 /**
@@ -201,5 +229,15 @@ export function canEnterClub(you, date) {
  * shouldAnswerPhone(true, true, false); // true
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
-  /* TODO */
+  if (
+    typeof isMorning !== "boolean" ||
+    typeof isBoss !== "boolean" ||
+    typeof isAsleep !== "boolean"
+  ) {
+    return undefined;
+  }
+  if (isAsleep) {
+    return false;
+  }
+  return !isMorning || isBoss;
 }
